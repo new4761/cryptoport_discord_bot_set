@@ -10,7 +10,7 @@ class Client extends Discord.Client {
   commands = new Discord.Collection();
   aliases = new Discord.Collection();
   slashcmds = new Discord.Collection();
-
+ // test = new Discord.Message
   /**
    * Loads all available events
    * @param {string} path

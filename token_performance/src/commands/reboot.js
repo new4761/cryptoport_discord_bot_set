@@ -1,3 +1,4 @@
+// example commands design 
 exports.run = async (client, message) => { 
    // const replying = settings.ensure(message.guild.id, config.defaultSettings).commandReply;
     await message.reply({ content: "Bot is shutting down."});
