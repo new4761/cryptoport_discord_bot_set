@@ -14,5 +14,5 @@ exports.help = {
     name: "price",
     category: "price",
     description: "get coin price details",
-    usage: "!price <coinname> <currency>"
+    usage: "!price <coinname> {currency}"
   };
