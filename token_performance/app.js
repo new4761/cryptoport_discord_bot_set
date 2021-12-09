@@ -1,11 +1,9 @@
-const Client = require("./src/Client.js");
+const Client = require("./src/client.js");
 const { Intents } = require("discord.js");
 const logger = require("./src/utils/logger");
-//const Coningecko = require('./src/services/Coningecko.js')
-require("dotenv").config();
-const mongoose = require("mongoose");
 
-const intents = new Intents();
+
+require("dotenv").config();
 
 const client = new Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
@@ -13,7 +11,7 @@ const client = new Client({
 
 //start up discord bot
 const init = async () => {
-  console.log("Starting crypto price bot");
+  logger.log("Starting crypto price bot");
   await client.loadEvents("./src/events");
   await client.loadCommands("./src/commands");
   client.login(process.env.BOT_TOKEN);
@@ -26,5 +24,5 @@ init();
 client
   .on("disconnect", () => client.logger.log("Bot is disconnecting...", "warn"))
   .on("reconnecting", () => client.logger.log("Bot reconnecting...", "log"))
-  .on("error", (e) => client.logger.log(e, "error"))
+  .on("error", (e) => client.logger.err(e, "error"))
   .on("warn", (info) => client.logger.log(info, "warn"));

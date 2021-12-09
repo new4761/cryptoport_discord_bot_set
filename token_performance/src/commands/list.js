@@ -1,6 +1,7 @@
 //const Coningecko = require("../services/Coingecko")
 const logger = require("../utils/logger.js");
 const ProjectService = require("../services/ProjectService");
+
 exports.run = async (client, message, args) => {
   const service = new ProjectService();
   service.count_project().then((data) => {
